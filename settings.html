@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Co-Living Browser Automation settings</title>
+<link rel="stylesheet" href="saved-contacts.css">
+<style>
+fieldset { margin: 16px 0; border: 1px solid #ccd6e3; border-radius: 8px; }
+fieldset label { display: block; padding: 6px; }
+textarea { width: 100%; box-sizing: border-box; font: inherit; padding: 10px; margin-bottom: 16px; }
+</style>
+<main>
+<h1>Extension settings</h1>
+<form id="settings">
+  <fieldset>
+    <legend>Enabled sources</legend>
+    <label><input id="enable-turbotenant" type="checkbox"> TurboTenant</label>
+    <label><input id="enable-padsplit" type="checkbox"> PadSplit</label>
+  </fieldset>
+  <p>Use <code>{{firstName}}</code>, <code>{{fullName}}</code>, and <code>{{propertyAddress}}</code> to insert details from the contact.</p>
+  <label for="message-turbotenant">TurboTenant message</label>
+  <textarea id="message-turbotenant" rows="5" required></textarea>
+  <label for="message-padsplit">PadSplit message</label>
+  <textarea id="message-padsplit" rows="5" required></textarea>
+  <button type="submit" disabled>Save settings</button>
+</form>
+<p id="status" role="status"></p>
+</main>
+<script src="settings-data.js"></script>
+<script src="settings.js"></script>
+</html>

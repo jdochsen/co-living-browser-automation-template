@@ -1,0 +1,37 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f6f9; color: #17243a; font: 16px/1.5 system-ui, sans-serif; }
+main { max-width: 1260px; margin: 40px auto; padding: 0 24px; }
+header { margin-bottom: 28px; }
+h1 { font-size: 36px; line-height: 1.2; margin: 8px 0; }
+p { margin: 8px 0; }
+.eyebrow { color: #53637a; font-size: 14px; }
+.toolbar { display: flex; align-items: end; flex-wrap: wrap; gap: 12px; background: white; padding: 20px; border: 1px solid #dce2ea; border-radius: 10px; }
+.search { flex: 1; min-width: 230px; }
+label { display: block; margin-bottom: 6px; font-weight: 600; }
+input, button, select { font: inherit; border: 1px solid #97a5b7; border-radius: 6px; padding: 10px 14px; }
+input, select { width: 100%; }
+.selection { margin-top: 14px; }
+input[type="checkbox"] { width: 20px; height: 20px; padding: 0; cursor: pointer; }
+button { cursor: pointer; background: #17243a; color: white; }
+button:disabled { opacity: .5; cursor: default; }
+input:focus-visible, button:focus-visible { outline: 3px solid #5687d7; outline-offset: 2px; }
+.note { color: #53637a; font-size: 14px; margin: 16px 0; }
+#status { min-height: 24px; }
+#status.error { color: #a72020; }
+.contact-table-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin: 12px 0; }
+#count { color: #53637a; margin: 0; }
+#empty { padding: 24px; background: white; border: 1px solid #dce2ea; border-radius: 10px; }
+.table-wrap { overflow-x: auto; background: white; border-radius: 10px; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+th { background: #e8edf4; font-size: 14px; white-space: nowrap; }
+th, td { padding: 16px; border-bottom: 1px solid #dce2ea; vertical-align: top; }
+td { overflow-wrap: anywhere; min-width: 130px; max-width: 350px; }
+td:first-child { min-width: 56px; width: 56px; }
+td:nth-child(2) label { cursor: pointer; }
+td:nth-child(3) { white-space: nowrap; }
+.detail { color: #53637a; font-size: 13px; }
+.inquiry + .inquiry { margin-top: 10px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+[hidden] { display: none !important; }
+@media (max-width: 600px) { main { margin: 24px auto; padding: 0 14px; } h1 { font-size: 28px; } .toolbar button { width: 100%; } }
+

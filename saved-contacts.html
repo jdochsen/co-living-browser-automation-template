@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saved contacts - Co-Living Browser Automation</title>
+<link rel="stylesheet" href="saved-contacts.css">
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">Co-Living Browser Automation</p>
+    <h1>Saved contacts</h1>
+    <p>Search your contacts by name, phone, email, or rental property.</p>
+  </header>
+  <section class="toolbar" aria-label="Contact search and backups">
+    <div class="search">
+      <label for="search">Search contacts</label>
+      <input id="search" type="search" placeholder="Name or property address" autocomplete="off">
+    </div>
+    <button id="export" type="button" disabled>Export all contacts (CSV)</button>
+    <button id="import" type="button">Import CSV</button>
+    <input id="file" type="file" accept=".csv,text/csv" hidden>
+  </section>
+  <section class="toolbar selection" aria-label="Load a saved contact">
+    <div><label for="load-source">Load as</label><select id="load-source" disabled><option value="turbotenant">TurboTenant</option><option value="padsplit">PadSplit</option></select></div>
+    <div class="search"><label for="load-property">Property address</label><select id="load-property" disabled></select></div>
+    <button id="load-selected" type="button" disabled>Load into extension</button>
+  </section>
+  <p class="note">Select one contact to load it, or select several to delete them.</p>
+  <p class="note">Saved in this Chrome profile. Export a CSV backup before removing the extension. Import merges contacts by phone number and retains their property inquiries.</p>
+  <p id="status" role="status"></p>
+<div id="empty" hidden>No saved contacts yet. Open the helper on a lead or booking request and click <strong>Save contact to browser</strong>.</div>
+  <div class="contact-table-toolbar">
+    <p id="count" aria-live="polite"></p>
+    <button id="delete-selected" type="button" disabled>Delete selected</button>
+  </div>
+  <div class="table-wrap">
+    <table id="table" hidden>
+      <caption class="sr-only">Saved contacts and rental property inquiries</caption>
+      <thead><tr><th scope="col"><label><input id="select-all" type="checkbox" disabled> Select all</label></th><th scope="col">Name</th><th scope="col">Phone</th><th scope="col">Email</th><th scope="col">Property and source</th><th scope="col">Dates</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+</main>
+<script src="contact-data.js"></script>
+<script src="settings-data.js"></script>
+<script src="saved-contacts.js"></script>
+</body>
+</html>
+

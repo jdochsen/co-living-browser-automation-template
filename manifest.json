@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Co-Living Browser Automation Template",
+  "version": "1.0.0",
+  "description": "Prepare TurboTenant and PadSplit outreach in Google Voice.",
+  "permissions": [
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://voice.google.com/*",
+    "https://rental.turbotenant.com/owners/lead-profile/*",
+    "https://www.padsplit.com/host/booking-request/*",
+    "https://contacts.google.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/house-16.png",
+      "32": "icons/house-32.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://contacts.google.com/*"
+      ],
+      "js": [
+        "contacts.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://voice.google.com/*"
+      ],
+      "js": [
+        "voice.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_ui": {
+    "page": "settings.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/house-16.png",
+    "32": "icons/house-32.png",
+    "48": "icons/house-48.png",
+    "128": "icons/house-128.png"
+  }
+}
